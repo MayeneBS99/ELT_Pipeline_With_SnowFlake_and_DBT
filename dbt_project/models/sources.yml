@@ -1,0 +1,13 @@
+# specify which database and which table we already have in snowflake
+
+version: 2
+
+sources:
+  - name: RAW
+    database: VELIB_DB
+    schema: RAW
+    tables:
+      - name: VELIB_STATION_STATUS_RAW
+      - name: VELIB_STATION_INFORMATION_RAW
+      - name: RAW_WEATHER
+
