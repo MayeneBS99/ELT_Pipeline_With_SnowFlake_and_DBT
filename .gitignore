@@ -1,0 +1,14 @@
+elt_project_env/
+*pyc
+__pycache__/
+.env
+
+# dbt
+target/
+dbt_modules/
+dbt_packages/
+logs/
+
+# OS
+.DS_Store
+
