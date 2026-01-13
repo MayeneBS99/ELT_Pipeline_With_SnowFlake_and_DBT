@@ -26,14 +26,17 @@ This project demonstrates a complete **ELT (Extract, Load, Transform)** pipeline
 ## 📂 Project Structure
 ```text
 Paris-EcoTrack/
-├── src/                        # Python Extraction Scripts
+├── .env                       <-- clés API et accès Snowflake
+├── .gitignore                 <-- Liste les fichiers à NE PAS envoyer sur GitHub
+├── requirements.txt
+├── src/
 │   ├── extract_velib.py
 │   └── extract_weather.py
-├── dbt_project/                # dbt Project Folder
+├── dbt_project/               <-- Ton dossier dbt (créé via 'dbt init')
+│   ├── dbt_project.yml        <-- Le cerveau (config des tables/vues)
+│   
 │   ├── models/
-│   │   ├── staging/            # Data Cleaning (Views)
-│   │   └── marts/              # Star Schema (Tables)
-│   ├── dbt_project.yml
-│   └── profiles.yml            # Snowflake connection config
-├── .env                        # Credentials (ignored by Git)
-└── requirements.txt            # Dependencies
+│   │   ├── sources.yml        <-- Déclare les tables RAW créées par Python
+│   │   ├── staging/           <-- Tes vues SQL de nettoyage
+│   │   └── marts/             <-- Tes tables SQL finales (Faits/Dimensions)
+└── README.md
