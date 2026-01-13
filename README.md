@@ -4,7 +4,7 @@
 ---
 
 ## 📌 Overview
-This project demonstrates a complete **ELT (Extract, Load, Transform)** pipeline. It automates the collection of bike availability data from the JCDecaux API and weather conditions from OpenWeatherMap, loads them into **Snowflake**, and transforms them using **dbt** into an Analytics-ready Star Schema.
+This project demonstrates a complete **ELT (Extract, Load, Transform)** pipeline. It automates the collection of bike availability data from the Velib-Metropole API and weather conditions from OpenWeatherMap, loads them into **Snowflake**, and transforms them using **dbt** into an Analytics-ready Star Schema.
 
 ## 🏗 Architecture
 
@@ -26,17 +26,17 @@ This project demonstrates a complete **ELT (Extract, Load, Transform)** pipeline
 ## 📂 Project Structure
 ```text
 Paris-EcoTrack/
-├── .env                       <-- clés API et accès Snowflake
-├── .gitignore                 <-- Liste les fichiers à NE PAS envoyer sur GitHub
+├── .env                       
+├── .gitignore                 
 ├── requirements.txt
 ├── src/
 │   ├── extract_velib.py
 │   └── extract_weather.py
-├── dbt_project/               <-- Ton dossier dbt (créé via 'dbt init')
-│   ├── dbt_project.yml        <-- Le cerveau (config des tables/vues)
+├── dbt_project/               
+│   ├── dbt_project.yml        
 │   
 │   ├── models/
-│   │   ├── sources.yml        <-- Déclare les tables RAW créées par Python
-│   │   ├── staging/           <-- Tes vues SQL de nettoyage
-│   │   └── marts/             <-- Tes tables SQL finales (Faits/Dimensions)
+│   │   ├── sources.yml        
+│   │   ├── staging/           
+│   │   └── marts/             
 └── README.md
