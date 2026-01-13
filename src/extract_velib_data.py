@@ -31,7 +31,7 @@ def extract_data_station_information(snapshot_ts) :
 
     print(f"Extraction velib station information Initialization .......")
 
-    response = requests.get(url_station_status)
+    response = requests.get(url_information_status)
     if response.status_code == 200 :
         data = response.json()
         df = pd.json_normalize(data['data']['stations'])
