@@ -22,6 +22,12 @@ models:
       +materialized: view
       +schema : STAGING
     marts:
-      +materialized: table
-      +schema : MART
+
+      facts: 
+        +materialized: table
+        +schema : ANALYTICS
+
+      dimensions : 
+        +materialized: table
+        +schema : ANALYTICS
 

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dimension_velib
+    columns:
+      - name: station_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dimension_time
+    columns:
+      - name: snapshot_ts
+        tests:
+          - unique
+          - not_null
+
+  - name: dimension_weather
+    columns:
+      - name: snapshot_ts
+        tests:
+          - unique
+          - not_null

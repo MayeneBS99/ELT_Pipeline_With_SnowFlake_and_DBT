@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fact_velib_data
+    description: "Fact table about bikes and weather"
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+          - relationships:
+              arguments :
+                to: ref('dimension_velib')
+                field: station_id
+
+      - name: snapshot_ts
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dimension_time')
+                field: snapshot_ts
+          - relationships:
+              arguments:
+                to: ref('dimension_weather')
+                field: snapshot_ts
+
+
+     
